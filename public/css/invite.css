@@ -1,0 +1,9 @@
+.body-padding {
+  padding: 150px 100px !important;
+  text-align: center;
+}
+
+.bxcenter {
+  width: 300px !important;
+  margin: 0px auto;
+}
