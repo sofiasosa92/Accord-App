@@ -1,0 +1,19 @@
+
+
+body {
+    background-color: #E8F8FF;
+}
+
+.button {
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color: #FFFAE9;
+}
+
+#results-btn {
+    background-color: #FFFAE9;
+    color: #000000;
+    width: 88%;
+    content: center;
+    margin-top: 450px;
+}

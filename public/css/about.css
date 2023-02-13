@@ -1,10 +1,13 @@
- 
- 
+
+
+.columns {
+    background-color: #FBC49F;
+}
+
 body {
     background-color: #FFFAE9;
     height: 800px;
     overflow-y: scroll;
-    /* padding: 50px; */
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 10px;
@@ -18,4 +21,6 @@ h1 {
     background-color: #E8F8FF;
   }
 
-  
+  .figure {
+    padding-bottom: auto;
+  }
