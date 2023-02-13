@@ -1,8 +1,21 @@
 
+.columns {
+    background-color: #E8F8FF;
+}
 
-body {
+body { 
     background-color: #FBC49F;
-    height: 850px;
+    height: 940px;
     padding: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
+}
+
+.button {
+background-color: #FFE3C7;
+margin-top: 50px;
+padding: 35px;
+}
+
+h1{
+    font-size: large;
 }
