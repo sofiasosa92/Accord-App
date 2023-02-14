@@ -6,8 +6,9 @@
 
 body {
     background-color: #FFFAE9;
-    height: 800px;
-    overflow-y: scroll;
+    height: 100vh;
+    /* overflow-y: hidden; */
+    display: position;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 10px;
