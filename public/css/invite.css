@@ -6,4 +6,21 @@
 .bxcenter {
   width: 300px !important;
   margin: 0px auto;
+  border: 1px solid #030707;
+}
+
+body {
+  background-color: #fbc49f;
+}
+
+.button {
+  background-color: #7cd1de;
+}
+
+.generatebx {
+  text-align: center;
+  margin: 0px auto;
+  width: 500px;
+  background-color: #fbc49f;
+  border: 1px solid #030707;
 }
