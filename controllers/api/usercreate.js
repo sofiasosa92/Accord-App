@@ -3,9 +3,6 @@ const router = require('express').Router();
 const {User} = require('../../models');
 
 router.post('/',async (req,res) => {
-    //
-    //console.log(req.body);
-    
     //Create user
     try {
         const newUser = await User.create({
@@ -19,8 +16,10 @@ router.post('/',async (req,res) => {
         res.status(400).send('You provided incorrect user name information');
         return;
     }
-    
     //Log in
+    req.session.save(() => {
+        req.session.loggedIn = true;
+    });
     //redirect to either invite or main
     res.redirect('../html/about.html');
 })

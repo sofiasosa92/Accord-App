@@ -3,7 +3,6 @@ const {User} = require('../models');
 
 router.post('/', async (req, res) => {
     //Check if valid password
-    console.log(req.body);
     try {
         const currentUser = await User.findOne({
             where: {
@@ -30,6 +29,7 @@ router.post('/', async (req, res) => {
       });
     //redirect to about 
     res.redirect('/html/about.html');
+    
 })
 
 module.exports = router;
