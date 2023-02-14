@@ -32,9 +32,17 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [6],
       },
     },
+    friend_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+        unique: false,
+      },
+    }
   },
   {
     hooks: {

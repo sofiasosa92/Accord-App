@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Accord App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="css/rojan.css">
   </head>
@@ -28,23 +28,24 @@
         </figure>
       </div>
       <div class="column is-half">
-        <form class="box">
+        <form method="post" class="box" action="/login">
           <p class="title is-1 is-spaced has-text-centered">Log In</p>
           <div class="field">
             <label class="label">Email</label>
             <div class="control">
-              <input class="input" type="email" placeholder="e.g. alex@example.com">
+              <input name="email" class="input" type="email" placeholder="e.g. alex@example.com">
             </div>
           </div>
         
           <div class="field">
             <label class="label">Password</label>
             <div class="control">
-              <input class="input" type="password" placeholder="********">
+              <input name="password" class="input" type="password" placeholder="********">
             </div>
           </div>
         
-          <button class="button is-primary">Sign in</button>
+          <button type="submit" class="button is-primary">Sign in</button>
+          <a href="/api/signup">Sign up</a>
         </form>
       </div>
       <div class="column">
