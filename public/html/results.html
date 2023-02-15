@@ -1,4 +1,23 @@
-<!--work on the confetti part-->
-<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accord-Results</title>
     
+</head>
+<body>
+    <button id="congrats">Click me</button>
+    <script src="node_modules/confetti-js/dist/index.min.js"></script>
+    <script>
+        const jsConfetti = new JSConfetti();
+
+        document
+            .querySelector("#congrats")
+            .addEventListener("click", (e) => { jsConfetti.addConfetti() });
+    </script>
 </body>
+
+</html>
