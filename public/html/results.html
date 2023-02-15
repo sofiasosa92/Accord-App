@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accord-Results</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
     <button id="congrats">Click me</button>
-    <script src="node_modules/confetti-js/dist/index.min.js"></script>
     <script>
         const jsConfetti = new JSConfetti();
 
         document
             .querySelector("#congrats")
-            .addEventListener("click", (e) => { jsConfetti.addConfetti() });
+            .addEventListener("click", (e) => { jsConfetti.addConfetti({emojis: ['💖', '💞', '💗', '💋', '💫', '💯']}) });
+
+
     </script>
 </body>
-
 </html>
