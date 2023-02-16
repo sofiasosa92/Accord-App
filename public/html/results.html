@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accord-Results</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <style>
-        .boxx {
-            background-color: #f05f5f;
-        }
+      .boxx {
+        background-color: #f05f5f;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <button id="congrats">Click me</button>
     <script>
-        const jsConfetti = new JSConfetti();
+      const jsConfetti = new JSConfetti();
 
-        document
-            .querySelector("#congrats")
-            .addEventListener("click", (e) => { jsConfetti.addConfetti({emojis: ['💖', '💞', '💗', '💋', '💫', '💯']}) });
-
-
+      document.querySelector("#congrats").addEventListener("click", (e) => {
+        jsConfetti.addConfetti({
+          emojis: ["💖", "💞", "💗", "💋", "💫", "💯"],
+        });
+      });
     </script>
     <!-- titlebox -->
-        <div class="box">
-            <h1 class="title is-1"> The Results </h1>
-        </div>
+    <div class="box">
+      <h1 class="title is-1">The Results</h1>
+    </div>
 
     <!-- dexcription box -->
     <div class="block">
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                </div>
-                <div class="column is-8">
-                    <div class="box has-text-centered">
-                        <h1 class="title is-5"> Results depend on the percentage of answers that you and your friend answered the same. </h1>
-                    </div>
-                </div>
-                <div class="column">
-                </div>
+      <div class="container">
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column is-8">
+            <div class="box has-text-centered">
+              <h1 class="title is-5">
+                Results depend on the percentage of answers that you and your
+                friend answered the same.
+              </h1>
             </div>
+          </div>
+          <div class="column"></div>
         </div>
+      </div>
     </div>
 
     <!-- overall similarity -->
     <div class="block">
-        <div class="container">
-
-            <div class="columns is-vcentered">
-                <div class="column is-8">
-                    <div class="box has-text-centered">
-                        <h1 class="title is-3"> Overall Similarity: </h1>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="box boxx">
-                        <figure class="image is-square">
-                            <img src="../images/zeropercent.JPG">
-                        </figure>                        
-                    </div>
-                </div>
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-8">
+            <div class="box has-text-centered">
+              <h1 class="title is-3">Overall Similarity:</h1>
             </div>
+          </div>
+          <div class="column">
+            <div class="box boxx">
+              <figure class="image is-square">
+                <img src="../images/zeropercent.JPG" />
+              </figure>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="block">
-        <div class="container">
-            <div class="box has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-8">
-                        <h1 class="title is-3"> Quiz 1 Results: </h1>
-                    </div>
-                    <div class="column">
-                        <figure class="image is-square">
-                            <img src="../images/zeropercent.JPG">
-                        </figure>
-                    </div>
-                    <div class="column">
-                    </div>
-                </div>
+      <div class="container">
+        <div class="box has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column is-8">
+              <h1 class="title is-3">Quiz 1 Results:</h1>
             </div>
+            <div class="column">
+              <figure class="image is-square">
+                <img src="../images/zeropercent.JPG" />
+              </figure>
+            </div>
+            <div class="column"></div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="block">
-        <div class="container">
-            <div class="box has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-8">
-                        <h1 class="title is-3"> Quiz 2 Results: </h1>
-                    </div>
-                    <div class="column">
-                        <figure class="image is-square">
-                            <img src="../images/zeropercent.JPG">
-                        </figure>
-                    </div>
-                    <div class="column">
-                    </div>
-                </div>
+      <div class="container">
+        <div class="box has-text-centered">
+          <div class="columns is-vcentered">
+            <div class="column is-8">
+              <h1 class="title is-3">Quiz 2 Results:</h1>
             </div>
+            <div class="column">
+              <figure class="image is-square">
+                <img src="../images/zeropercent.JPG" />
+              </figure>
+            </div>
+            <div class="column"></div>
+          </div>
         </div>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
