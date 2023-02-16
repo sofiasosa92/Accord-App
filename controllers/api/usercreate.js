@@ -1,6 +1,7 @@
 const router = require('express').Router();
 //const sequelize = require('./config/connection');
 const {User} = require('../../models');
+const randomNum = require('../../utils/randomNum.js');
 
 router.post('/',async (req,res) => {
     //Create user
@@ -9,6 +10,7 @@ router.post('/',async (req,res) => {
             name: req.body.user,
             email: req.body.email,
             password: req.body.password,
+            codeid:  randomNum()
         });
     } catch (err) {
         console.log(err);

@@ -35,12 +35,24 @@ User.init(
         len: [6],
       },
     },
-    initiator: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
+    codeid: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    codeID: {
-      type: DataTypes.STRING
+    BFF: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+        unique: false
+      }
+    },
+    answers: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'answer',
+        key: 'id'
+      }
     }
   },
   {

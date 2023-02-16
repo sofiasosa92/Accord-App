@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User,Current} = require('../models');
+const {User} = require('../models');
 
 router.post('/', async (req, res) => {
     //Check if valid password
@@ -13,23 +13,8 @@ router.post('/', async (req, res) => {
             res.status(401).redirect('../html/401.html');
             return;
         }
-        //currentUserID = currentUser.id;
-        
-        try {
-            const currentUser = await Current.findOne({
-                where: {
-                    id: 1
-                }
-            });
-            currentUser.currentNumber = loggedUser.id;
-            await currentUser.save();
-        } catch (err) {
-            //return
-            console.log("\n\n\n Before render err\n\n" );
-            //res.render('error', {err});
-            return;
-        }
-        
+        req.app.locals.currentID = loggedUser.id;
+        console.log(loggedUser.id);
         const currentUserPassword = await loggedUser.checkPassword(req.body.password);
 
         if (!currentUserPassword) {

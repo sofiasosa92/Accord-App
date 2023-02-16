@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="invite.css" />
+    <link rel="stylesheet" href="../css/invite.css" />
   </head>
   <body class="body-padding">
     <h1 class="title">Accord - Invite Code</h1>
@@ -47,9 +47,11 @@
         const codeDisplay = document.getElementById('codeDisplay');
         const genCodeBtn = document.getElementById('genCodeBtn');
         const enterCodeBtn = document.getElementById('enterCodeBtn');
-        genCodeBtn.addEventListener('click', (e) => {
-            //Fetch a new code
-            codeDisplay.innerText = 'AAA';
+        genCodeBtn.addEventListener('click', async (e) => {
+            //Get the curren user ID
+            await fetch('/api/gencode').then( res => res.json())
+            .then(data => codeDisplay.innerText = data.code);
+            
         });
         enterCodeBtn.addEventListener('click', (e) => {
             //Enter code

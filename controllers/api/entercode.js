@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Current} = require('../../models');
+const {User} = require('../../models');
 //Add with auth
 
 
@@ -12,19 +12,28 @@ router.post('/',async (req,res) => {
     make this current user's iitiator to false
     make this current user's code to req.body
     */
-   let logggedUser = await Current.findOne({
-    where: {
-        id: 1
-    }
-   });
-   console.log(req.body);
+   //Check if code is valid
+   
+   //console.log(req.body.code);
+   let currentUser;
    try {
-    let currentUser = await User.findByPk(logggedUser.currentNumber);
-    console.log(currentUser);
-    currentUser.initiator = false;
-    currentUser.codeID = req.body.code;
-    currentUser.save();
+    currentUser = await User.findByPk(req.app.locals.currentID);
+    //console.log('Current User: \n\n');
+    //console.log(currentUser.name);
+    
+   } catch (err) {
+
+   }
+   let codedUser;
+   try {
+    codedUser = await User.findOne({
+        where: {
+            codeid: req.body.code
+        }
+    });
    } catch (err) {}
+   console.log(codedUser);
+   
    //req.body.code;
     // try {
     //     const newUser = await User.create({
