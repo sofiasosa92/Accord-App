@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const {User} = require('../../models');
+const sequelize = require('../../config/connection');
 //Add with auth
 
 
@@ -22,7 +23,7 @@ router.post('/',async (req,res) => {
     //console.log(currentUser.name);
     
    } catch (err) {
-
+    res.render('error',{err});
    }
    let codedUser;
    try {
@@ -31,9 +32,21 @@ router.post('/',async (req,res) => {
             codeid: req.body.code
         }
     });
-   } catch (err) {}
+    if (!codedUser ) {
+        res.status(400).send('No such code');
+    }
+   } catch (err) {
+    res.render('error',{err});
+   }
    console.log(codedUser);
-   
+   //Asign BFF
+   try {
+    currentUser.BFF = codedUser.id;
+    currentUser.save(); 
+    sequelize.sync();
+   } catch (err) {
+    res.render('error',{err});
+   }
    //req.body.code;
     // try {
     //     const newUser = await User.create({
