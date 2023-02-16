@@ -35,6 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
+  const current = require('./models/Current');
+  const loggedDash = current.create({currentNumber: 0})
+})
+.then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

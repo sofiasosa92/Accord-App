@@ -9,19 +9,19 @@ router.post('/',async (req,res) => {
             name: req.body.user,
             email: req.body.email,
             password: req.body.password,
-            friend_id: null
         });
     } catch (err) {
         console.log(err);
-        res.status(400).send('You provided incorrect user name information');
+        res.render('error',{err});
+        //res.status(400).send('You provided incorrect user name information');
         return;
     }
     //Log in
     req.session.save(() => {
         req.session.loggedIn = true;
     });
-    //redirect to either invite or main
-    res.redirect('../html/about.html');
+    //redirect back to logged in
+    res.redirect('/');
 })
 
 

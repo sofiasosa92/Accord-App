@@ -21,16 +21,8 @@
     </style>
   </head>
   <body>
-    <button id="congrats">Click me</button>
-    <script>
-      const jsConfetti = new JSConfetti();
-
-      document.querySelector("#congrats").addEventListener("click", (e) => {
-        jsConfetti.addConfetti({
-          emojis: ["💖", "💞", "💗", "💋", "💫", "💯"],
-        });
-      });
-    </script>
+    
+    
     <!-- titlebox -->
     <div class="box">
       <h1 class="title is-1">The Results</h1>
@@ -159,5 +151,19 @@
         </div>
       </div>
     </div>
+    <script>
+      const jsConfetti = new JSConfetti();
+      window.onload = () => {
+        jsConfetti.addConfetti({
+        emojis: ["💖", "💞", "💗", "💋", "💫", "💯"],
+      });
+        
+      }
+      document.querySelector("body").addEventListener("click", (e) => {
+        jsConfetti.addConfetti({
+          emojis: ["💖", "💞", "💗", "💋", "💫", "💯"],
+        });
+      });
+    </script>
   </body>
 </html>

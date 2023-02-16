@@ -1,19 +1,44 @@
 const router = require('express').Router();
-const {User} = require('../models');
+const {User,Current} = require('../models');
 
 router.post('/', async (req, res) => {
     //Check if valid password
     try {
-        const currentUser = await User.findOne({
+        const loggedUser = await User.findOne({
             where: {
                 email: req.body.email,
             }
         });
-        if (!currentUser) {
+        if (!loggedUser) {
             res.status(401).redirect('../html/401.html');
             return;
         }
-        const currentUserPassword = await currentUser.checkPassword(req.body.password);
+        //currentUserID = currentUser.id;
+        
+        try {
+            console.log("Inside try\n\n\n" + loggedUser.id);
+            const currentUser = await Current.findOne({
+                where: {
+                    id: 1
+                }
+            });
+            currentUser.currentNumber = loggedUser.id;
+            await currentUser.save();
+        } catch (err) {
+            //return
+            console.log("\n\n\n Before render err\n\n" );
+            //res.render('error', {err});
+            return;
+        }
+        
+        //If current user, then make one
+        // if (!currentUser) {
+        //     currentUser = await Current.create({currentNumber: loggedUser.id});
+        // } else {
+        //     currentUser.currentNumber = loggedUser.id;
+        //     await currentUser.save();
+        // }
+        const currentUserPassword = await loggedUser.checkPassword(req.body.password);
 
         if (!currentUserPassword) {
             res.status(401).redirect('../html/401.html');
@@ -28,7 +53,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
         req.session.loggedIn = true;
     });
-    //redirect to about 
+    //redirect to about
     res.redirect('/html/about.html');
     
     

@@ -35,14 +35,7 @@ User.init(
         len: [6],
       },
     },
-    friend_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-        unique: false,
-      },
-    }
+    
   },
   {
     hooks: {
@@ -60,3 +53,14 @@ User.init(
 );
 
 module.exports = User;
+
+
+
+// friend_id: {
+//   type: DataTypes.INTEGER,
+//   references: {
+//     model: "user",
+//     key: "id",
+//     unique: false,
+//   },
+// }

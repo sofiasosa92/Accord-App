@@ -13,6 +13,7 @@ This is an app that helps you connect to your future BFFs!
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Screenshot](#screenshot)
 - [TeamMembers](#team-members)
 - [Questions](#questions)
 
@@ -35,6 +36,10 @@ Submit a GitHub Issue
 ## Tests
 
 N/A
+
+## Screenshot
+
+![Screenshot](./assets/AccordScreenShot.png)
 
 ## Team-members
 
