@@ -35,7 +35,13 @@ User.init(
         len: [6],
       },
     },
-    
+    initiator: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    codeID: {
+      type: DataTypes.STRING
+    }
   },
   {
     hooks: {
@@ -47,7 +53,7 @@ User.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    underscored: false,
     modelName: 'user',
   }
 );

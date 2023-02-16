@@ -16,7 +16,6 @@ router.post('/', async (req, res) => {
         //currentUserID = currentUser.id;
         
         try {
-            console.log("Inside try\n\n\n" + loggedUser.id);
             const currentUser = await Current.findOne({
                 where: {
                     id: 1
@@ -31,13 +30,6 @@ router.post('/', async (req, res) => {
             return;
         }
         
-        //If current user, then make one
-        // if (!currentUser) {
-        //     currentUser = await Current.create({currentNumber: loggedUser.id});
-        // } else {
-        //     currentUser.currentNumber = loggedUser.id;
-        //     await currentUser.save();
-        // }
         const currentUserPassword = await loggedUser.checkPassword(req.body.password);
 
         if (!currentUserPassword) {
