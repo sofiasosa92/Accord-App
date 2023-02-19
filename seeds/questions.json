@@ -1,0 +1,103 @@
+[
+  {
+    "question": "I prefer to read the book over watching the movie?",
+    "category": 1
+  },
+  {
+    "question": "I prefer to be a millionaire over having super powers?",
+    "category": 1
+  },
+  {
+    "question": "I prefer Summer over winter?",
+    "category": 1
+  },
+  {
+    "question": "I prefer Marvel over DC?",
+    "category": 1
+  },
+  {
+    "question": "I prefer rural over urban?",
+    "category": 1
+  },
+  {
+    "question": "I find it relatively easy to make emotional connections to others.",
+    "category": 2
+  },
+  {
+    "question": "I find that I am comfortable while not having close emotional relationships.",
+    "category": 2
+  },
+  {
+    "question": "I find that I struggle to communicate my needs directly.",
+    "category": 2
+  },
+  {
+    "question": "I have difficulty developing trust in others.",
+    "category": 2
+  },
+  {
+    "question": "You would forgive a partner for cheating on you if it was the “right” person.",
+    "category": 2
+  },
+  {
+    "question": "If you saw a person drop a wallet, would you give it back to them?",
+    "category": 3
+  },
+  {
+    "question": "If you saw your enemy drowning, would you save them?",
+    "category": 3
+  },
+  {
+    "question": "Would you prefer brutal honesty over sugar coating?",
+    "category": 3
+  },
+  {
+    "question": "Would you save the life of your pet over a stranger?",
+    "category": 3
+  },
+  {
+    "question": "Would you compromise key moral values for the right amount of money?",
+    "category": 3
+  },
+  {
+    "question": "Have you ever been on a wreck?",
+    "category": 4
+  },
+  {
+    "question": "Have you ever ridden a horse?",
+    "category": 4
+  },
+  {
+    "question": "Have you ever volunteered in your community?",
+    "category": 4
+  },
+  {
+    "question": "Have you ever lied about a family member dying to get out of doing something?",
+    "category": 4
+  },
+  {
+    "question": "Have you ever gone camping?",
+    "category": 4
+  },
+  {
+    "question": "I find it more meaningful to spend time with someone over having them do something practical for me. ",
+    "category": 5
+  },
+  {
+    "question": "I find it more meaningful when I receive gifts from the person I love over spending leisure time together.",
+    "category": 5
+  },
+  {
+    "question": "I find it more meaningful to spend time with someone I love oversharing physical touch.",
+    "category": 5
+  },
+  {
+    "question": "I find it more meaningful to receive unprompted compliments from someone over being near each other.",
+    "category": 5
+  },
+  {
+    "question": "I find it more meaningful when I feel connected to someone through a hug than receiving a gift that shows they care about me.",
+    "category": 5
+  }
+  
+]
