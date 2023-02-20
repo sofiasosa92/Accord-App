@@ -9,6 +9,7 @@ Answer.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true
     },
     userID: {
       type: DataTypes.INTEGER,

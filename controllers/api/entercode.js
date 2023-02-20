@@ -10,8 +10,6 @@ router.post('/',async (req,res) => {
    let currentUser;
    try {
     currentUser = await User.findByPk(req.app.locals.currentID);
-    //console.log('Current User: \n\n');
-    //console.log(currentUser.name);
     
    } catch (err) {
     res.render('error',{err});

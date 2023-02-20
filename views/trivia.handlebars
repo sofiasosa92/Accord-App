@@ -8,11 +8,27 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="../css/trivia.css" />
+    {{!-- <link rel="stylesheet" href="../css/trivia.css" /> --}}
     <style>
         .box {
           background-color: #fbc49f;
         }
+        input[type="radio"]{
+             -webkit-appearance: none;
+             appearance: none;
+         }   
+         label {
+          /* margin: 0px 30px; */
+          border: 6px solid #1716161d;
+          padding: 10px;
+          border-radius: 35%;
+         }
+         input[type="radio"]:checked + label {
+          border: 6px solid #f10b0b6f;
+          padding: 10px;
+          border-radius: 35%;
+         }
+         
       </style>
       
     <title>Accord - Friendship Trivia</title>
@@ -21,7 +37,7 @@
   <body>
     <!--Title-->
     <br />
-    <div class="box">
+    <form class="box" method="post" action="/api/writeanswers">
       
       <p class="title is-1 is-spaced has-text-centered">Friendship Trivia</p>
       <p class="subtitle is-4 has-text-centered">
@@ -33,27 +49,31 @@
 
         <div class="my-6 has-text-centered">
             <p class="my-3">{{questions.[0].[question]}}</p>
-            <button id="1a" class="mx-3 button is-rounded">Agree</button><button id="1b" class="mx-3 button is-rounded">Disagree</button>
+            <input type="radio" name="Answer1" id="1a" value="true"><label class="mx-3 button is-rounded" for="1a">Agree</label><input type="radio" name="Answer1" id="1b" value="false"><label class="mx-3 button is-rounded" for="1b">Disagree</label>
             <br>
         </div>
         <div class="my-6 has-text-centered">
             <p class="my-3">{{questions.[1].[question]}}</p>
-            <button id="2a" class="mx-3 button is-rounded">Agree</button><button id="2b" class="mx-3 button is-rounded">Disagree</button>
+            <input type="radio" name="Answer2" id="2a" value="true"><label class="mx-3 button is-rounded" for="2a">Agree</label><input type="radio" name="Answer2" id="2b" value="false"><label class="mx-3 button is-rounded" for="2b">Disagree</label>
+            
             <br>
         </div>
         <div class="my-6 has-text-centered">
             <p class="my-3">{{questions.[2].[question]}}</p>
-            <button id="3a"  class="mx-3 button is-rounded">Agree</button><button id="3b" class="mx-3 button is-rounded">Disagree</button>
+            <input type="radio" name="Answer3" id="3a" value="true"><label class="mx-3 button is-rounded" for="3a">Agree</label><input type="radio" name="Answer3" id="3b" value="false"><label class="mx-3 button is-rounded" for="3b">Disagree</label>
+            {{!-- <button id="3a"  class="mx-3 button is-rounded">Agree</button><button id="3b" class="mx-3 button is-rounded">Disagree</button> --}}
             <br>
         </div>
         <div class="my-6 has-text-centered">
             <p class="my-3">{{questions.[3].[question]}}</p>
-            <button id="4a"  class="mx-3 button is-rounded">Agree</button><button id="4b" class="mx-3 button is-rounded">Disagree</button>
+            <input type="radio" name="Answer4" id="4a" value="true"><label class="mx-3 button is-rounded" for="4a">Agree</label><input type="radio" name="Answer4" id="4b" value="false"><label class="mx-3 button is-rounded" for="4b">Disagree</label>
+            {{!-- <button id="4a"  class="mx-3 button is-rounded">Agree</button><button id="4b" class="mx-3 button is-rounded">Disagree</button> --}}
             <br>
         </div>
         <div class="my-6 has-text-centered">
             <p class="my-3">{{questions.[4].[question]}}</p>
-            <button id="5a"  class="mx-3 button is-rounded">Agree</button><button id="5b" class="mx-3 button is-rounded">Disagree</button>
+            <input type="radio" name="Answer5" id="5a" value="true"><label class="mx-3 button is-rounded" for="5a">Agree</label><input type="radio" name="Answer5" id="5b" value="false"><label class="mx-3 button is-rounded" for="5b">Disagree</label>
+            {{!-- <button id="5a"  class="mx-3 button is-rounded">Agree</button><button id="5b" class="mx-3 button is-rounded">Disagree</button> --}}
             <br>
         </div>
         <!-- END Category -->
@@ -63,27 +83,32 @@
 
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[5].[question]}}</p>
-          <button id="6a"  class="mx-3 button is-rounded">Agree</button><button id="6b" class="mx-3 button is-rounded">Disagree</button>
+          <input type="radio" name="Answer6" id="6a" value="true"><label class="mx-3 button is-rounded" for="6a">Agree</label><input type="radio" name="Answer6" id="6b" value="false"><label class="mx-3 button is-rounded" for="6b">Disagree</label>
+          {{!-- <button id="6a"  class="mx-3 button is-rounded">Agree</button><button id="6b" class="mx-3 button is-rounded">Disagree</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[6].[question]}}</p>
-          <button id="7a"  class="mx-3 button is-rounded">Agree</button><button id="7b" class="mx-3 button is-rounded">Disagree</button>
+          <input type="radio" name="Answer7" id="7a" value="true"><label class="mx-3 button is-rounded" for="7a">Agree</label><input type="radio" name="Answer7" id="7b" value="false"><label class="mx-3 button is-rounded" for="7b">Disagree</label>
+          {{!-- <button id="7a"  class="mx-3 button is-rounded">Agree</button><button id="7b" class="mx-3 button is-rounded">Disagree</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[7].[question]}}</p>
-          <button id="8a"  class="mx-3 button is-rounded">Agree</button><button id="8b" class="mx-3 button is-rounded">Disagree</button>
+          <input type="radio" name="Answer8" id="8a" value="true"><label class="mx-3 button is-rounded" for="8a">Agree</label><input type="radio" name="Answer8" id="8b" value="false"><label class="mx-3 button is-rounded" for="8b">Disagree</label>
+          {{!-- <button id="8a"  class="mx-3 button is-rounded">Agree</button><button id="8b" class="mx-3 button is-rounded">Disagree</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[8].[question]}}</p>
-          <button id="9a"  class="mx-3 button is-rounded">Agree</button><button id="9b" class="mx-3 button is-rounded">Disagree</button>
+          <input type="radio" name="Answer9" id="9a" value="true"><label class="mx-3 button is-rounded" for="9a">Agree</label><input type="radio" name="Answer9" id="9b" value="false"><label class="mx-3 button is-rounded" for="9b">Disagree</label>
+          {{!-- <button id="9a"  class="mx-3 button is-rounded">Agree</button><button id="9b" class="mx-3 button is-rounded">Disagree</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[9].[question]}}</p>
-          <button id="10a"  class="mx-3 button is-rounded">Agree</button><button id="10b" class="mx-3 button is-rounded">Disagree</button>
+          <input type="radio" name="Answer10" id="10a" value="true"><label class="mx-3 button is-rounded" for="10a">Agree</label><input type="radio" name="Answer10" id="10b" value="false"><label class="mx-3 button is-rounded" for="10b">Disagree</label>
+          {{!-- <button id="10a"  class="mx-3 button is-rounded">Agree</button><button id="10b" class="mx-3 button is-rounded">Disagree</button> --}}
           <br>
       </div>
       <!-- END Category -->
@@ -93,27 +118,32 @@
 
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[10].[question]}}</p>
-           <button id="11a"  class="mx-3 button is-rounded">Agree</button><button id="11b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer11" id="11a" value="true"><label class="mx-3 button is-rounded" for="11a">Agree</label><input type="radio" name="Answer11" id="11b" value="false"><label class="mx-3 button is-rounded" for="11b">Disagree</label>
+           {{!-- <button id="11a"  class="mx-3 button is-rounded">Agree</button><button id="11b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[11].[question]}}</p>
-           <button id="12a"  class="mx-3 button is-rounded">Agree</button><button id="12b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer12" id="12a" value="true"><label class="mx-3 button is-rounded" for="12a">Agree</label><input type="radio" name="Answer12" id="12b" value="false"><label class="mx-3 button is-rounded" for="12b">Disagree</label>
+           {{!-- <button id="12a"  class="mx-3 button is-rounded">Agree</button><button id="12b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[12].[question]}}</p>
-           <button id="13a"  class="mx-3 button is-rounded">Agree</button><button id="13b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer13" id="13a" value="true"><label class="mx-3 button is-rounded" for="13a">Agree</label><input type="radio" name="Answer13" id="13b" value="false"><label class="mx-3 button is-rounded" for="13b">Disagree</label>
+           {{!-- <button id="13a"  class="mx-3 button is-rounded">Agree</button><button id="13b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[13].[question]}}</p>
-           <button id="14a"  class="mx-3 button is-rounded">Agree</button><button id="14b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer14" id="14a" value="true"><label class="mx-3 button is-rounded" for="14a">Agree</label><input type="radio" name="Answer14" id="14b" value="false"><label class="mx-3 button is-rounded" for="14b">Disagree</label>
+           {{!-- <button id="14a"  class="mx-3 button is-rounded">Agree</button><button id="14b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[14].[question]}}</p>
-           <button id="15a"  class="mx-3 button is-rounded">Agree</button><button id="15b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer15" id="15a" value="true"><label class="mx-3 button is-rounded" for="15a">Agree</label><input type="radio" name="Answer15" id="15b" value="false"><label class="mx-3 button is-rounded" for="15b">Disagree</label>
+           {{!-- <button id="15a"  class="mx-3 button is-rounded">Agree</button><button id="15b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <!-- END Category -->
@@ -123,27 +153,32 @@
 
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[15].[question]}}</p>
-          <button id="16a"  class="mx-3 button is-rounded">Yes</button><button id="16b" class="mx-3 button is-rounded">No</button>
+          <input type="radio" name="Answer16" id="16a" value="true"><label class="mx-3 button is-rounded" for="16a">Agree</label><input type="radio" name="Answer16" id="16b" value="false"><label class="mx-3 button is-rounded" for="16b">Disagree</label>
+          {{!-- <button id="16a"  class="mx-3 button is-rounded">Yes</button><button id="16b" class="mx-3 button is-rounded">No</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[16].[question]}}</p>
-          <button id="17a"  class="mx-3 button is-rounded">Yes</button><button id="17b" class="mx-3 button is-rounded">No</button>
+          <input type="radio" name="Answer17" id="17a" value="true"><label class="mx-3 button is-rounded" for="17a">Agree</label><input type="radio" name="Answer17" id="17b" value="false"><label class="mx-3 button is-rounded" for="17b">Disagree</label>
+          {{!-- <button id="17a"  class="mx-3 button is-rounded">Yes</button><button id="17b" class="mx-3 button is-rounded">No</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[17].[question]}}</p>
-          <button id="18a"  class="mx-3 button is-rounded">Yes</button><button id="18b" class="mx-3 button is-rounded">No</button>
+          <input type="radio" name="Answer18" id="18a" value="true"><label class="mx-3 button is-rounded" for="18a">Agree</label><input type="radio" name="Answer18" id="18b" value="false"><label class="mx-3 button is-rounded" for="18b">Disagree</label>
+          {{!-- <button id="18a"  class="mx-3 button is-rounded">Yes</button><button id="18b" class="mx-3 button is-rounded">No</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[18].[question]}}</p>
-          <button id="19a"  class="mx-3 button is-rounded">Yes</button><button id="19b" class="mx-3 button is-rounded">No</button>
+          <input type="radio" name="Answer19" id="19a" value="true"><label class="mx-3 button is-rounded" for="19a">Agree</label><input type="radio" name="Answer19" id="19b" value="false"><label class="mx-3 button is-rounded" for="19b">Disagree</label>
+          {{!-- <button id="19a"  class="mx-3 button is-rounded">Yes</button><button id="19b" class="mx-3 button is-rounded">No</button> --}}
           <br>
       </div>
       <div class="my-6 has-text-centered">
           <p class="my-3">{{questions.[19].[question]}}</p>
-          <button id="20a"  class="mx-3 button is-rounded">Yes</button><button id="20b" class="mx-3 button is-rounded">No</button>
+          <input type="radio" name="Answer20" id="20a" value="true"><label class="mx-3 button is-rounded" for="20a">Agree</label><input type="radio" name="Answer20" id="20b" value="false"><label class="mx-3 button is-rounded" for="20b">Disagree</label>
+          {{!-- <button id="20a"  class="mx-3 button is-rounded">Yes</button><button id="20b" class="mx-3 button is-rounded">No</button> --}}
           <br>
       </div>
       <!-- END Category -->
@@ -153,464 +188,46 @@
 
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[20].[question]}}</p>
-           <button id="21a"  class="mx-3 button is-rounded">Agree</button><button id="21b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer21" id="21a" value="true"><label class="mx-3 button is-rounded" for="21a">Agree</label><input type="radio" name="Answer21" id="21b" value="false"><label class="mx-3 button is-rounded" for="21b">Disagree</label>
+           {{!-- <button id="21a"  class="mx-3 button is-rounded">Agree</button><button id="21b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[21].[question]}}</p>
-           <button id="22a"  class="mx-3 button is-rounded">Agree</button><button id="22b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer22" id="22a" value="true"><label class="mx-3 button is-rounded" for="22a">Agree</label><input type="radio" name="Answer22" id="22b" value="false"><label class="mx-3 button is-rounded" for="22b">Disagree</label>
+           {{!-- <button id="22a"  class="mx-3 button is-rounded">Agree</button><button id="22b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[22].[question]}}</p>
-           <button id="23a"  class="mx-3 button is-rounded">Agree</button><button id="23b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer23" id="23a" value="true"><label class="mx-3 button is-rounded" for="23a">Agree</label><input type="radio" name="Answer23" id="23b" value="false"><label class="mx-3 button is-rounded" for="23b">Disagree</label>
+           {{!-- <button id="23a"  class="mx-3 button is-rounded">Agree</button><button id="23b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[23].[question]}}</p>
-           <button id="24a"  class="mx-3 button is-rounded">Agree</button><button id="24b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer24" id="24a" value="true"><label class="mx-3 button is-rounded" for="24a">Agree</label><input type="radio" name="Answer24" id="24b" value="false"><label class="mx-3 button is-rounded" for="24b">Disagree</label>
+           {{!-- <button id="24a"  class="mx-3 button is-rounded">Agree</button><button id="24b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <div class="my-6 has-text-centered">
            <p class="my-3">{{questions.[24].[question]}}</p>
-           <button id="25a"  class="mx-3 button is-rounded">Agree</button><button id="25b" class="mx-3 button is-rounded">Disagree</button>
+           <input type="radio" name="Answer25" id="25a" value="true"><label class="mx-3 button is-rounded" for="25a">Agree</label><input type="radio" name="Answer25" id="25b" value="false"><label class="mx-3 button is-rounded" for="25b">Disagree</label>
+           {{!-- <button id="25a"  class="mx-3 button is-rounded">Agree</button><button id="25b" class="mx-3 button is-rounded">Disagree</button> --}}
            <br>
        </div>
        <!-- END Category -->
-      <!--This will be an event listener for when teh trivia is done-->
-      <!--It will display to have the user see the results of the trivia-->
-
-      <a
+      <button type="submit" class="button is-rounded is-large is-outlined is-fullwidth">See Results</button>
+      {{!-- <a
         id="results-btn" style="margin-top: -30px;"
         class="button is-rounded is-large is-outlined is-fullwidth" href="html/main.html"
         >See Results!</a
-      >
+      > --}}
       
-    </div>
-    <script>
-      var a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25;
-      const btn1a = document.getElementById('1a');
-      const btn2a = document.getElementById('2a');
-      const btn3a = document.getElementById('3a');
-      const btn4a = document.getElementById('4a');
-      const btn5a = document.getElementById('5a');
-      const btn6a = document.getElementById('6a');
-      const btn7a = document.getElementById('7a');
-      const btn8a = document.getElementById('8a');
-      const btn9a = document.getElementById('9a');
-      const btn10a = document.getElementById('10a');
-      const btn11a = document.getElementById('11a');
-      const btn12a = document.getElementById('12a');
-      const btn13a = document.getElementById('13a');
-      const btn14a = document.getElementById('14a');
-      const btn15a = document.getElementById('15a');
-      const btn16a = document.getElementById('16a');
-      const btn17a = document.getElementById('17a');
-      const btn18a = document.getElementById('18a');
-      const btn19a = document.getElementById('19a');
-      const btn20a = document.getElementById('20a');
-      const btn21a = document.getElementById('21a');
-      const btn22a = document.getElementById('22a');
-      const btn23a = document.getElementById('23a');
-      const btn24a = document.getElementById('24a');
-      const btn25a = document.getElementById('25a');
-      const btn1b = document.getElementById('1b');
-      const btn2b = document.getElementById('2b');
-      const btn3b = document.getElementById('3b');
-      const btn4b = document.getElementById('4b');
-      const btn5b = document.getElementById('5b');
-      const btn6b = document.getElementById('6b');
-      const btn7b = document.getElementById('7b');
-      const btn8b = document.getElementById('8b');
-      const btn9b = document.getElementById('9b');
-      const btn10b = document.getElementById('10b');
-      const btn11b = document.getElementById('11b');
-      const btn12b = document.getElementById('12b');
-      const btn13b = document.getElementById('13b');
-      const btn14b = document.getElementById('14b');
-      const btn15b = document.getElementById('15b');
-      const btn16b = document.getElementById('16b');
-      const btn17b = document.getElementById('17b');
-      const btn18b = document.getElementById('18b');
-      const btn19b = document.getElementById('19b');
-      const btn20b = document.getElementById('20b');
-      const btn21b = document.getElementById('21b');
-      const btn22b = document.getElementById('22b');
-      const btn23b = document.getElementById('23b');
-      const btn24b = document.getElementById('24b');
-      const btn25b = document.getElementById('25b');
-
-      btn1a.addEventListener('click', (e) => {
-        a1 = true;
-        btn1a.disabled = true;
-        btn1b.disabled = true;
-        fetch(`/api/writeanswers/${a1}/${1}`);
-      });
-      
-      btn2a.addEventListener('click', (e) => {
-        a2 = true;
-        btn2a.disabled = true;
-        btn2b.disabled = true;
-        fetch(`/api/writeanswers/${a2}/${2}`);
-      });
-      
-      btn3a.addEventListener('click', (e) => {
-        a3 = true;
-        btn3a.disabled = true;
-        btn3b.disabled = true;
-        fetch(`/api/writeanswers/${a3}/${3}`);
-      });
-      
-      btn4a.addEventListener('click', (e) => {
-        a4 = true;
-        btn4a.disabled = true;
-        btn4b.disabled = true;
-        fetch(`/api/writeanswers/${a4}/${4}`);
-      });
-      
-      btn5a.addEventListener('click', (e) => {
-        a5 = true;
-        btn5a.disabled = true;
-        btn5b.disabled = true;
-        fetch(`/api/writeanswers/${a5}/${5}`);
-      });
-      
-      btn6a.addEventListener('click', (e) => {
-        a6 = true;
-        btn6a.disabled = true;
-        btn6b.disabled = true;
-        fetch(`/api/writeanswers/${a6}/${6}`);
-      });
-      
-      btn7a.addEventListener('click', (e) => {
-        a7 = true;
-        btn7a.disabled = true;
-        btn7b.disabled = true;
-        fetch(`/api/writeanswers/${a7}/${7}`);
-      });
-      
-      btn8a.addEventListener('click', (e) => {
-        a8 = true;
-        btn8a.disabled = true;
-        btn8b.disabled = true;
-        fetch(`/api/writeanswers/${a8}/${8}`);
-      });
-      
-      btn9a.addEventListener('click', (e) => {
-        a9 = true;
-        btn9a.disabled = true;
-        btn9b.disabled = true;
-        fetch(`/api/writeanswers/${a9}/${9}`);
-      });
-      
-      btn10a.addEventListener('click', (e) => {
-        a10 = true;
-        btn10a.disabled = true;
-        btn10b.disabled = true;
-        fetch(`/api/writeanswers/${a10}/${10}`);
-      });
-      
-      btn11a.addEventListener('click', (e) => {
-        a11 = true;
-        btn11a.disabled = true;
-        btn11b.disabled = true;
-        fetch(`/api/writeanswers/${a11}/${11}`);
-      });
-      
-      btn12a.addEventListener('click', (e) => {
-        a12 = true;
-        btn12a.disabled = true;
-        btn12b.disabled = true;
-        fetch(`/api/writeanswers/${a12}/${12}`);
-      });
-      
-      btn13a.addEventListener('click', (e) => {
-        a13 = true;
-        btn13a.disabled = true;
-        btn13b.disabled = true;
-        fetch(`/api/writeanswers/${a13}/${13}`);
-      });
-      
-      btn14a.addEventListener('click', (e) => {
-        a14 = true;
-        btn14a.disabled = true;
-        btn14b.disabled = true;
-        fetch(`/api/writeanswers/${a14}/${14}`);
-      });
-      
-      btn15a.addEventListener('click', (e) => {
-        a15 = true;
-        btn15a.disabled = true;
-        btn15b.disabled = true;
-        fetch(`/api/writeanswers/${a15}/${15}`);
-      });
-      
-      btn16a.addEventListener('click', (e) => {
-        a16 = true;
-        btn16a.disabled = true;
-        btn16b.disabled = true;
-        fetch(`/api/writeanswers/${a16}/${16}`);
-      });
-      
-      btn17a.addEventListener('click', (e) => {
-        a17 = true;
-        btn17a.disabled = true;
-        btn17b.disabled = true;
-        fetch(`/api/writeanswers/${a17}/${17}`);
-      });
-      
-      btn18a.addEventListener('click', (e) => {
-        a18 = true;
-        btn18a.disabled = true;
-        btn18b.disabled = true;
-        fetch(`/api/writeanswers/${a18}/${18}`);
-      });
-      
-      btn19a.addEventListener('click', (e) => {
-        a19 = true;
-        btn19a.disabled = true;
-        btn19b.disabled = true;
-        fetch(`/api/writeanswers/${a19}/${19}`);
-      });
-      
-      btn20a.addEventListener('click', (e) => {
-        a20 = true;
-        btn20a.disabled = true;
-        btn20b.disabled = true;
-        fetch(`/api/writeanswers/${a20}/${20}`);
-      });
-      
-      btn21a.addEventListener('click', (e) => {
-        a21 = true;
-        btn21a.disabled = true;
-        btn21b.disabled = true;
-        fetch(`/api/writeanswers/${a21}/${21}`);
-      });
-      
-      btn22a.addEventListener('click', (e) => {
-        a22 = true;
-        btn22a.disabled = true;
-        btn22b.disabled = true;
-        fetch(`/api/writeanswers/${a22}/${22}`);
-      });
-      
-      btn23a.addEventListener('click', (e) => {
-        a23 = true;
-        btn23a.disabled = true;
-        btn23b.disabled = true;
-        fetch(`/api/writeanswers/${a23}/${23}`);
-      });
-      
-      btn24a.addEventListener('click', (e) => {
-        a24 = true;
-        btn24a.disabled = true;
-        btn24b.disabled = true;
-        fetch(`/api/writeanswers/${a24}/${24}`);
-      });
-      
-      btn25a.addEventListener('click', (e) => {
-        a25 = true;
-        btn25a.disabled = true;
-        btn25b.disabled = true;
-        fetch(`/api/writeanswers/${a25}/${25}`);
-      });
-      //
-      
-      btn1b.addEventListener('click', (e) => {
-        a1 = false;
-        btn1a.disabled = true;
-        btn1b.disabled = true;
-        fetch(`/api/writeanswers/${a1}/${1}`);
-      });
-      
-      btn2b.addEventListener('click', (e) => {
-        a2 = false;
-        btn2a.disabled = true;
-        btn2b.disabled = true;
-        fetch(`/api/writeanswers/${a2}/${2}`);
-      });
-      
-      btn3b.addEventListener('click', (e) => {
-        a3 = false;
-        btn3a.disabled = true;
-        btn3b.disabled = true;
-        fetch(`/api/writeanswers/${a3}/${3}`);
-      });
-      
-      btn4b.addEventListener('click', (e) => {
-        a4 = false;
-        btn4a.disabled = true;
-        btn4b.disabled = true;
-        fetch(`/api/writeanswers/${a4}/${4}`);
-      });
-      
-      btn5b.addEventListener('click', (e) => {
-        a5 = false;
-        btn5a.disabled = true;
-        btn5b.disabled = true;
-        fetch(`/api/writeanswers/${a5}/${5}`);
-      });
-      
-      btn6b.addEventListener('click', (e) => {
-        a6 = false;
-        btn6a.disabled = true;
-        btn6b.disabled = true;
-        fetch(`/api/writeanswers/${a6}/${6}`);
-      });
-      
-      btn7b.addEventListener('click', (e) => {
-        a7 = false;
-        btn7a.disabled = true;
-        btn7b.disabled = true;
-        fetch(`/api/writeanswers/${a7}/${7}`);
-      });
-      
-      btn8b.addEventListener('click', (e) => {
-        a8 = false;
-        btn8a.disabled = true;
-        btn8b.disabled = true;
-        fetch(`/api/writeanswers/${a8}/${8}`);
-      });
-      
-      btn9b.addEventListener('click', (e) => {
-        a9 = false;
-        btn9a.disabled = true;
-        btn9b.disabled = true;
-        fetch(`/api/writeanswers/${a9}/${9}`);
-      });
-      
-      btn10b.addEventListener('click', (e) => {
-        a10 = false;
-        btn10a.disabled = true;
-        btn10b.disabled = true;
-        fetch(`/api/writeanswers/${a10}/${10}`);
-      });
-      
-      btn11b.addEventListener('click', (e) => {
-        a11 = false;
-        btn11a.disabled = true;
-        btn11b.disabled = true;
-        fetch(`/api/writeanswers/${a11}/${11}`);
-      });
-      
-      btn12b.addEventListener('click', (e) => {
-        a12 = false;
-        btn12a.disabled = true;
-        btn12b.disabled = true;
-        fetch(`/api/writeanswers/${a12}/${12}`);
-      });
-      
-      btn13b.addEventListener('click', (e) => {
-        a13 = false;
-        btn13a.disabled = true;
-        btn13b.disabled = true;
-        fetch(`/api/writeanswers/${a13}/${13}`);
-      });
-      
-      btn14b.addEventListener('click', (e) => {
-        a14 = false;
-        btn14a.disabled = true;
-        btn14b.disabled = true;
-        fetch(`/api/writeanswers/${a14}/${14}`);
-      });
-      
-      btn15b.addEventListener('click', (e) => {
-        a15 = false;
-        btn15a.disabled = true;
-        btn15b.disabled = true;
-        fetch(`/api/writeanswers/${a15}/${15}`);
-      });
-      
-      btn16b.addEventListener('click', (e) => {
-        a16 = false;
-        btn16a.disabled = true;
-        btn16b.disabled = true;
-        fetch(`/api/writeanswers/${a16}/${16}`);
-      });
-      
-      btn17b.addEventListener('click', (e) => {
-        a17 = false;
-        btn17a.disabled = true;
-        btn17b.disabled = true;
-        fetch(`/api/writeanswers/${a17}/${17}`);
-      });
-      
-      btn18b.addEventListener('click', (e) => {
-        a18 = false;
-        btn18a.disabled = true;
-        btn18b.disabled = true;
-        fetch(`/api/writeanswers/${a18}/${18}`);
-      });
-      
-      btn19b.addEventListener('click', (e) => {
-        a19 = false;
-        btn19a.disabled = true;
-        btn19b.disabled = true;
-        fetch(`/api/writeanswers/${a19}/${19}`);
-      });
-      
-      btn20b.addEventListener('click', (e) => {
-        a20 = false;
-        btn20a.disabled = true;
-        btn20b.disabled = true;
-        fetch(`/api/writeanswers/${a20}/${20}`);
-      });
-      
-      btn21b.addEventListener('click', (e) => {
-        a21 = false;
-        btn21a.disabled = true;
-        btn21b.disabled = true;
-        fetch(`/api/writeanswers/${a21}/${21}`);
-      });
-      
-      btn22b.addEventListener('click', (e) => {
-        a22 = false;
-        btn22a.disabled = true;
-        btn22b.disabled = true;
-        fetch(`/api/writeanswers/${a22}/${22}`);
-      });
-      
-      btn23b.addEventListener('click', (e) => {
-        a23 = false;
-        btn23a.disabled = true;
-        btn23b.disabled = true;
-        fetch(`/api/writeanswers/${a23}/${23}`);
-      });
-      
-      btn24b.addEventListener('click', (e) => {
-        a24 = false;
-        btn24a.disabled = true;
-        btn24b.disabled = true;
-        fetch(`/api/writeanswers/${a24}/${24}`);
-      });
-      
-      btn25b.addEventListener('click', (e) => {
-        a25 = false;
-        btn25a.disabled = true;
-        btn25b.disabled = true;
-        fetch(`/api/writeanswers/${a25}/${25}`);
-      });
-
-      //FInal button
-      const resultsBtn = document.getElementById('results-btn');
-      resultsBtn.addEventListener('click', (e) => {
-        const bodyObject = {a1: a1,a2: a2,a3: a3,a4: a4,a5: a5,a6: a6,a7: a7,a8: a8,a9: a9,a10: a10,a11: a11,a12: a12,a13: a13,a14: a14,a15: a15,a16: a16,a17: a17,a18: a18,a19: a19,a20: a20,a21: a21,a22: a22,a23: a23,a24: a24,a25: a25}
-        //console.log(bodyObject);
-        fetch(`/api/writeanswers/${bodyObject}`);
-      })
-      // resultsBtn.addEventListener('click', (e) => {
-      //   //console.log(JSON.parse({a1: a1,a2: a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25}))
-      //   //const jsonTest = JSON.parse({a1,a2});
-        
-      //   const bodyObject = {a1: a1,a2: a2,a3: a3,a4: a4,a5: a5,a6: a6,a7: a7,a8: a8,a9: a9,a10: a10,a11: a11,a12: a12,a13: a13,a14: a14,a15: a15,a16: a16,a17: a17,a18: a18,a19: a19,a20: a20,a21: a21,a22: a22,a23: a23,a24: a24,a25: a25}
-      //   console.log(bodyObject);
-      //   fetch('/api/writeanswers', {
-      //     method: "post",
-          
-      //     body: bodyObject ,
-      //   })
-      // })
-    </script>
+    </form>
+    
+    
+    
   </body>
 </html>
 
