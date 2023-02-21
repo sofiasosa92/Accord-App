@@ -18,10 +18,7 @@ router.post('/',async (req,res) => {
         //res.status(400).send('You provided incorrect user name information');
         return;
     }
-    //Log in
-    req.session.save(() => {
-        req.session.loggedIn = true;
-    });
+   
     //redirect back to logged in
     res.redirect('/');
 })

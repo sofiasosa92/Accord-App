@@ -26,10 +26,7 @@ router.post('/', async (req, res) => {
         res.render('error',{err});
         return
     }
-    //log into session
-    req.session.save(() => {
-        req.session.loggedIn = true;
-    });
+    
     //redirect to about
     res.redirect('/html/about.html');
     

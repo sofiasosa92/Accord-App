@@ -58,7 +58,7 @@
           <div class="column">
             <div class="box boxx">
               <figure class="image is-square">
-                <img id="overall" src="../images/60pc.JPG" />
+                <img id="overall" src="../images/0pc.JPG" />
               </figure>
             </div>
           </div>
@@ -75,7 +75,7 @@
             </div>
             <div class="column">
               <figure class="image is-square">
-                <img id="energyConnector" src="../images/40pc.JPG" />
+                <img id="energyConnector" src="../images/0pc.JPG" />
               </figure>
             </div>
             <div class="column"></div>
@@ -92,7 +92,7 @@
             </div>
             <div class="column">
               <figure class="image is-square">
-                <img id="attachmentStyle "src="../images/60pc.JPG" />
+                <img id="attachmentStyle" src="../images/0pc.JPG" />
               </figure>
             </div>
             <div class="column"></div>
@@ -109,7 +109,7 @@
             </div>
             <div class="column">
               <figure class="image is-square">
-                <img id="moralDilemnas" src="../images/80pc.JPG" />
+                <img id="moralDilemnas" src="../images/0pc.JPG" />
               </figure>
             </div>
             <div class="column"></div>
@@ -126,7 +126,7 @@
             </div>
             <div class="column">
               <figure class="image is-square">
-                <img id="haveYouEver" src="../images/80pc.JPG" />
+                <img id="haveYouEver" src="../images/0pc.JPG" />
               </figure>
             </div>
             <div class="column"></div>
@@ -143,7 +143,7 @@
             </div>
             <div class="column">
               <figure class="image is-square">
-                <img id="loveLanguages" src="../images/20pc.JPG" />
+                <img id="loveLanguages" src="../images/0pc.JPG" />
               </figure>
             </div>
             <div class="column"></div>
@@ -152,13 +152,40 @@
       </div>
     </div>
     <script>
-      
+      function imagePlacer(percent) {
+        if (percent == 0) {
+            return '../images/0pc.JPG';
+          } else if (percent > 0 && percent <= 0.2) {
+            return '../images/20pc.JPG';
+          } else if (percent > 0.2 && percent <= 0.4) {
+            return '../images/40pc.JPG';
+          } else if (percent > 0.4 && percent <= 0.6) {
+            return '../images/60pc.JPG';
+          } else if (percent > 0.6 && percent <= 0.8) {
+            return '../images/80pc.JPG';
+          } else {
+            return '../images/100pc.JPG';
+          }
+      }
       const jsConfetti = new JSConfetti();
       window.onload = () => {
         jsConfetti.addConfetti({
         emojis: ["💖", "💞", "💗", "💋", "💫", "💯"],
       });
-        
+        const overall = document.getElementById('overall');
+        fetch('/api/results')
+        .then(response => response.json())
+        .then(data => {
+          const {total, category1, category2, category3, category4, category5} = data;
+          console.log(`data: ${data.category1}`);
+          overall.src = imagePlacer(total);
+          energyConnector.src = imagePlacer(category1);
+          attachmentStyle.src = imagePlacer(category2);
+          moralDilemnas.src = imagePlacer(category3);
+          haveYouEver.src = imagePlacer(category4);
+          loveLanguages.src = imagePlacer(category5);
+        })
+        .catch( err => console.log(err))
       }
       document.querySelector("body").addEventListener("click", (e) => {
         jsConfetti.addConfetti({
