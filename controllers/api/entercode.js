@@ -29,7 +29,6 @@ router.post('/',async (req,res) => {
    } catch (err) {
     res.render('error',{err});
    }
-   //console.log(codedUser);
    //Asign BFF to current user
    try {
     currentUser.BFF = codedUser.id;

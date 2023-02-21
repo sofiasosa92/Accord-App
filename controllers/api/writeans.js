@@ -2,41 +2,7 @@ const router = require('express').Router();
 const {User, Answer} = require('../../models');
 const sequelize = require('../../config/connection');
 
-/*
-router.get('/:ans/:qid', async (req,res) => {
-    console.log('\n\n\n\n');
-    console.log(req.params.ans + req.params.qid);
-    let currentUser, currentAnswer;
-    try {
-     currentUser = await User.findByPk(req.app.locals.currentID);
-     if (currentUser.answers === null) {
-        currentAnswer = await Answer.create({
-            id: currentUser.codeid,
-            userID: currentUser.id
-        })
-     } else {
-        currentAnswer = await Answer.findOne({
-            where: {
-                id: currentUser.codeid,
-            }
-        })
-     }
-     switch(req.params.qid) {
-        case 1: 
-            currentAnswer.a1 = req.params.ans;
-            break;
-        case 2: 
-            currentAnswer.a2 = req.params.ans;
-            break;
-     }
-     currentAnswer.save();
-     sequelize.sync();
 
-    } catch (err) {
-     res.render('error',{err});
-    }
-})
-*/
 router.post('/', async (req,res) => {
     /*Check if all the questions were answered by checking then length of the request body.
     It was to be 25.  Note: To the TA grading ->  This is not a "production" ready method.
