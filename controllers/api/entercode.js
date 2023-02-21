@@ -33,8 +33,10 @@ router.post('/',async (req,res) => {
    //Asign BFF to current user
    try {
     currentUser.BFF = codedUser.id;
-    currentUser.save(); 
-    sequelize.sync();
+    codedUser.BFF = currentUser.id;
+    await currentUser.save(); 
+    await codedUser.save()
+    await sequelize.sync();
    } catch (err) {
     res.render('error',{err});
    }

@@ -1,8 +1,6 @@
 const withAuth = (req, res, next) => {
-  // If the user isn't logged in, redirect them to the login route
-  console.log('Inside auth.js');
-  console.log(req.session.loggedIn);
-  if (!req.session.loggedIn) {
+  // If there is no stored user (both a session and sequelize user id), then go to log in.
+  if (!req.app.locals.currentID) {
     res.redirect('/');
   } else {
     next();
