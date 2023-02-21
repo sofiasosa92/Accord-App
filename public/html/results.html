@@ -155,17 +155,17 @@
       function imagePlacer(percent) {
         if (percent == 0) {
             return '../images/0pc.JPG';
-          } else if (percent > 0 && percent <= 0.2) {
+        } else if (percent == 1) {
             return '../images/20pc.JPG';
-          } else if (percent > 0.2 && percent <= 0.4) {
+        } else if (percent == 2) {
             return '../images/40pc.JPG';
-          } else if (percent > 0.4 && percent <= 0.6) {
+        } else if (percent == 3) {
             return '../images/60pc.JPG';
-          } else if (percent > 0.6 && percent <= 0.8) {
+        } else if (percent == 4) {
             return '../images/80pc.JPG';
-          } else {
-            return '../images/100pc.JPG';
-          }
+        }else {
+          return '../images/100pc.JPG';
+        }
       }
       const jsConfetti = new JSConfetti();
       window.onload = () => {
@@ -179,6 +179,19 @@
           const {total, category1, category2, category3, category4, category5} = data;
           console.log(`category: ${data.category1}, catergory2 ${category2} category3 ${category3} category4 ${category4}`);
           overall.src = imagePlacer(total);
+          if (total == 0) {
+            overall.src = '../images/0pc.JPG';
+          } else if (total > 0 && total <= 5) {
+            overall.src = '../images/20pc.JPG';
+          } else if (total > 5 && total <= 10) {
+            overall.src = '../images/40pc.JPG';
+          } else if (total > 10 && total <= 15) {
+            overall.src = '../images/60pc.JPG';
+          } else if (total > 15 && total <= 20) {
+            overall.src = '../images/80pc.JPG';
+          } else {
+            overall.src = '../images/100pc.JPG';
+          }
           energyConnector.src = imagePlacer(category1);
           attachmentStyle.src = imagePlacer(category2);
           moralDilemnas.src = imagePlacer(category3);

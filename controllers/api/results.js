@@ -148,12 +148,12 @@ router.get('/',withAuth, async (req, res) => {
     }
     
     let heartValues = {
-        total: (total / 25),
-        category1: (cat1 / 5),
-        category2: (cat2 / 5),
-        category3: (cat3 / 5),
-        category4: (cat4 / 5),
-        category5: (cat5 / 5)
+        total: total,
+        category1: cat1,
+        category2: cat2,
+        category3: cat3,
+        category4: cat4,
+        category5: cat5
     };
     
     res.json(heartValues);
