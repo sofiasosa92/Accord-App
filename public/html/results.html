@@ -177,7 +177,7 @@
         .then(response => response.json())
         .then(data => {
           const {total, category1, category2, category3, category4, category5} = data;
-          console.log(`category: ${data.category1}, catergory2 ${category2} category3 ${category3} category4 ${category4}`);
+          console.log(`category: ${data.category1}, category2 ${category2} category3 ${category3} category4 ${category4}`);
           overall.src = imagePlacer(total);
           if (total == 0) {
             overall.src = '../images/0pc.JPG';
